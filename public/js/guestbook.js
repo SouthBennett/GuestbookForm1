@@ -60,9 +60,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const linkedin = document.getElementById("linkedin-url").value.trim();
 
     if (linkedin !== "") {
-      if (!linkedin.startsWith("http://linkedin/com/in/")) {
+      if (!linkedin.startsWith("http://linkedin.com/in/")) {
         document.getElementById("err-linkedin").textContent =
-          'Must start Linkedin URL with "http://linkedin/com/in/" ';
+          'Must start Linkedin URL with "http://linkedin.com/in/" ';
         isValid = false;
       } else {
         document.getElementById("err-linkedin").textContent = "";
