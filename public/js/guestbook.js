@@ -73,7 +73,35 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Connection validation
+    const connection = document.getElementById("connection").value;
+    const otherField = document.getElementById("other");
+    const otherWrapper = document.getElementById("connection");
 
+    // Requires the user to select a how we met option
+    if (connection === "none" || connection === "") {
+      document.getElementById("err-connection").textContent =
+        "Select how we met";
+      isValid = false;
+    } else {
+      document.getElementById("err-connection").textContent = "";
+    }
+
+    // Toggle "Other" field visibility
+    if (connection === "Other") {
+      otherWrapper.classList.remove("hidden");
+
+      // If other is selected, require input
+      if (otherField.value.trim() === "") {
+        document.getElementById("err-other").textContent =
+          "Please select how we met";
+        isValid = false;
+      } else {
+        document.getElementById("err-other").textContent = "";
+      }
+    } else {
+      otherWrapper.classList.add("hidden");
+      document.getElementById("err-other").textContent = "";
+    }
     if (!isValid) e.preventDefault();
   });
 });
