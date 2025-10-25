@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="/public/styles/styles.css" />
     <title>Contact Me</title>
+
+    <script src="/public/js/guestbook.js" defer></script>
 
     <!-- Favicon -->
     <link rel="icon" href="images/contact-form-favicon.png" />
@@ -18,10 +20,14 @@
           <div>
             <label for="fname">First Name</label>
             <input type="text" id="fname" name="fname" />
+            <span id="err-fname" class="error">First Name cannot be empty</span>
           </div>
           <div>
             <label for="lname">Last Name</label>
             <input type="text" id="lname" name="lname" />
+            <span id="err-lname" class="error"
+              >First Name cannot be empty!</span
+            >
           </div>
           <div>
             <label for="jtitle">Job Title</label>

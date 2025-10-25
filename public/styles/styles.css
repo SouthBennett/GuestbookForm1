@@ -107,6 +107,13 @@ button:hover {
   background-color: #43a047;
 }
 
+.error {
+  color: red;
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 4px;
+}
+
 @media (max-width: 700px) {
   .personal-info,
   .how-we-met {
