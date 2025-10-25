@@ -115,4 +115,21 @@ document.addEventListener("DOMContentLoaded", () => {
       otherWrapper.classList.add("hidden");
     }
   });
+
+  // Show or hide Email/Text
+  const mailingListCheckbox = document.getElementById("mailing-list");
+  const emailFormatSection = document.getElementById("email-format-section");
+
+  if (!mailingListCheckbox.checked) {
+    emailFormatSection.classList.add("hidden");
+  }
+
+  // Show HTML and Text buttons when box is checked
+  mailingListCheckbox.addEventListener("change", () => {
+    if (mailingListCheckbox.checked) {
+      emailFormatSection.classList.remove("hidden");
+    } else {
+      emailFormatSection.classList.add("hidden");
+    }
+  });
 });
