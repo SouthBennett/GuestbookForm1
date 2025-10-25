@@ -39,6 +39,23 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("err-email").textContent = "";
     }
 
+    // Mailing list dependency
+    const mailingListChecked = document.getElementById("mailing-list").checked;
+    const emailVal = document.getElementById("email").value.trim();
+
+    // If mailing list is checked, email is required
+    if (mailingListChecked) {
+      if (emailVal === "") {
+        document.getElementById("err-mailing-list").textContent =
+          "Email is required if you join the mailing list.";
+        isValid = false;
+      } else {
+        document.getElementById("err-mailing-list").textContent = "";
+      }
+    } else {
+      document.getElementById("err-mailing-list").textContent = "";
+    }
+
     if (!isValid) e.preventDefault();
   });
 });
