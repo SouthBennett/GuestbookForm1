@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("err-fname").textContent = "";
     }
 
-    // First Name Validation
+    // Last Name Validation
     const lname = document.getElementById("lname").value.trim();
     if (lname === "") {
       document.getElementById("err-lname").textContent =
@@ -24,7 +24,21 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("err-lname").textContent = "";
     }
 
-    // Prevent form submision if any field are invalid
+    //Validate Email
+    const email = document.getElementById("email").value.trim();
+
+    if (email !== "") {
+      if (!email.includes("@") || !email.includes(".")) {
+        document.getElementById("err-email").textContent =
+          "Email must include '@' and a dot (.)";
+        isValid == false;
+      } else {
+        document.getElementById("err-email").textContent = "";
+      }
+    } else {
+      document.getElementById("err-email").textContent = "";
+    }
+
     if (!isValid) e.preventDefault();
   });
 });
