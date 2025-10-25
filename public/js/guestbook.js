@@ -13,5 +13,18 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       document.getElementById("err-fname").textContent = "";
     }
+
+    // First Name Validation
+    const lname = document.getElementById("lname").value.trim();
+    if (lname === "") {
+      document.getElementById("err-lname").textContent =
+        "Last name is required.";
+      isValid = false;
+    } else {
+      document.getElementById("err-lname").textContent = "";
+    }
+
+    // Prevent form submision if any field are invalid
+    if (!isValid) e.preventDefault();
   });
 });
