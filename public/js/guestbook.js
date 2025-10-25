@@ -104,4 +104,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (!isValid) e.preventDefault();
   });
+
+  const connectionSelect = document.getElementById("connection");
+  const otherWrapper = document.getElementById("other-wrapper");
+
+  connectionSelect.addEventListener("change", () => {
+    if (connectionSelect.value === "Other") {
+      otherWrapper.classList.remove("hidden");
+    } else {
+      otherWrapper.classList.add("hidden");
+    }
+  });
 });
