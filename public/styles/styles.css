@@ -114,6 +114,10 @@ button:hover {
   margin-top: 4px;
 }
 
+.hidden {
+  display: none;
+}
+
 @media (max-width: 700px) {
   .personal-info,
   .how-we-met {

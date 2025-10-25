@@ -47,7 +47,7 @@
           </div>
         </section>
 
-        <!-- Encounter -->
+        <!-- Connection -->
         <section class="how-we-met">
           <div>
             <label for="connection">How did we meet?</label>
@@ -55,16 +55,19 @@
               <option value="none" selected disabled>
                 -- Please select --
               </option>
-              <option>School</option>
-              <option>Work</option>
-              <option>Gym</option>
-              <option>Party</option>
+              <option value="School">School</option>
+              <option value="Work">Work</option>
+              <option value="Gym">Gym</option>
+              <option value="Party">Party</option>
+              <option value="Other">Other</option>
             </select>
+            <span id="err-connection" class="error"></span>
           </div>
 
-          <div>
+          <div id="other-wrapper" class="hidden">
             <label for="other">Other (please specify)</label>
             <input type="text" id="other" name="other" />
+            <span id="err-other" class="error"></span>
           </div>
         </section>
 

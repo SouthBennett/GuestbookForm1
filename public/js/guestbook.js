@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("err-mailing-list").textContent = "";
     }
 
-    // LinkedIn Validation (if user has linkedin it must start with "http://linkedin/com/in/")
+    // LinkedIn Validation (if user has linkedin it must start with "https://linkedin.com/in/")
     const linkedin = document.getElementById("linkedin-url").value.trim();
 
     if (linkedin !== "") {
@@ -71,6 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // Clear existing errors if the field is left blank
       document.getElementById("err-linkedin").textContent = "";
     }
+
+    // Connection validation
 
     if (!isValid) e.preventDefault();
   });
