@@ -56,6 +56,22 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("err-mailing-list").textContent = "";
     }
 
+    // LinkedIn Validation (if user has linkedin it must start with "http://linkedin/com/in/")
+    const linkedin = document.getElementById("linkedin-url").value.trim();
+
+    if (linkedin !== "") {
+      if (!linkedin.startsWith("http://linkedin/com/in/")) {
+        document.getElementById("err-linkedin").textContent =
+          'Must start Linkedin URL with "http://linkedin/com/in/" ';
+        isValid = false;
+      } else {
+        document.getElementById("err-linkedin").textContent = "";
+      }
+    } else {
+      // Clear existing errors if the field is left blank
+      document.getElementById("err-linked").textContent = "";
+    }
+
     if (!isValid) e.preventDefault();
   });
 });
