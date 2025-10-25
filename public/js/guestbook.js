@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Connection validation
     const connection = document.getElementById("connection").value;
     const otherField = document.getElementById("other");
-    const otherWrapper = document.getElementById("connection");
+    const otherWrapper = document.getElementById("other-wrapper");
 
     // Requires the user to select a how we met option
     if (connection === "none" || connection === "") {
