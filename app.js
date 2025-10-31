@@ -33,9 +33,9 @@ app.get("/confirmation", (req, res) => {
   res.render('confirmation');
 });
 
-// app.get("/admin", (req, res) => {
-//   res.render("admin", { contacts });
-// });
+app.get("/admin", (req, res) => {
+  res.render("admin", { contacts });
+});
 
 // Handle POST requests sent to the "/submit" route
 app.post("/submit", (req, res) => {
