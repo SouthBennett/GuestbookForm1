@@ -7,6 +7,12 @@ const app = express();
 // Enable static file serving
 app.use(express.static("public"));
 
+// Allow the app to parse form data
+app.use(express.urlencoded({extended: true }));
+
+// Create an array to store contacts
+const contacts = [];
+
 //Define the port number where our serve will listen
 const PORT = 3003;
 
@@ -18,6 +24,13 @@ app.get("/", (req, res) => {
   //res.send('<h1>Welcome to Poppa\'s Pizza!');
   res.sendFile(`${import.meta.dirname}/views/home.html`);
 });
+
+//Confirmation route
+app.get("/confirmation", (req, res) => {
+  res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
+});
+
+res.redirect("/confirmation")
 
 //Start the server and make it listen on the port
 //specified above
