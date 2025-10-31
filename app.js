@@ -5,7 +5,7 @@ import express from "express";
 const app = express();
 
 // Set EJS as the view engine
-app.set("view engine", "ejs");
+//app.set("view engine", "ejs");
 
 // Enable static file serving
 app.use(express.static("public"));
@@ -25,14 +25,14 @@ const PORT = 3003;
 app.get("/", (req, res) => {
   //Send " Hello, world!" as a response to the client
   //res.send('<h1>Welcome to Poppa\'s Pizza!');
-  //res.sendFile(`${import.meta.dirname}/views/home.html`);
-  res.render("home");
+  res.sendFile(`${import.meta.dirname}/views/home.html`);
+  //res.render("home");
 });
 
 //Confirmation route
 app.get("/confirmation", (req, res) => {
-  //res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
-  res.render("confirmation")
+  res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
+  //res.render("confirmation")
 });
 
 app.post("/submit", (req, res) => {
