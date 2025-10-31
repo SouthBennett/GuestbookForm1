@@ -105,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!isValid) e.preventDefault();
   });
 
+  // How we met text box if the user selects "Other"
   const connectionSelect = document.getElementById("connection");
   const otherWrapper = document.getElementById("other-wrapper");
 
