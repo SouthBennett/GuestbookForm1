@@ -28,7 +28,7 @@ app.get("/confirmation", (req, res) => {
   res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
 });
 
-app.post("/submit", (req, res) => {
+app.post("/submit-booking", (req, res) => {
   const contact = {
     fname: req.body.fname,
     lname: req.body.lname,
