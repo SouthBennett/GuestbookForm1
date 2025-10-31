@@ -1,11 +1,11 @@
 // Import the express module
-import express from "express";
+import express from 'express';
 
 //Create an instance of an Express application
 const app = express();
 
 // Enable static file serving
-app.use(express.static("public"));
+app.use(express.static('public'));
 
 // Allow the app to parse form data
 app.use(express.urlencoded({extended: true }));
@@ -47,7 +47,7 @@ app.post("/submit", (req, res) => {
   console.log("New contact:", contact);
 
   // Redirect to confirmation page
-  res.redirect("/confirmation", { contact });
+  res.redirect("/confirmation");
 });
 
 //Start the server and make it listen on the port
