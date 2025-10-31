@@ -30,7 +30,27 @@ app.get("/confirmation", (req, res) => {
   res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
 });
 
-res.redirect("/confirmation")
+app.post("/submit", (req, res) => {
+  const contact = {
+    fname: req.body.fname,
+    lname: req.body.lname,
+    jtitle: req.body.jtitle,
+    company: req.body.company,
+    linkedin: req.body["linkedin-url"],
+    email: req.body.email,
+    connection: req.body.connection,
+    other: req.body.other,
+    message: req.body.message,
+    timestamp: new DataTransfer().toLocaleString(),
+  };
+
+  // Push contact into the array
+  contacts.push(contact);
+  console.log("New contact:", contact);
+
+  // Redirect to confirmation page
+  res.redirect("/confirmation")
+});
 
 //Start the server and make it listen on the port
 //specified above
