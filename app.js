@@ -54,7 +54,7 @@ app.post("/submit", (req, res) => {
   console.log("New contact:", contact);
 
   // Redirect to confirmation page
-  res.render("/confirmation", { contact });
+  res.render("confirmation", { contact });
 });
 
 //Start the server and make it listen on the port
