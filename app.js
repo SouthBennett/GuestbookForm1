@@ -28,7 +28,9 @@ app.get("/confirmation", (req, res) => {
   res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
 });
 
-app.post("/submit-booking", (req, res) => {
+// Handle POST requests sent to the "/submit" route
+app.post("/submit", (req, res) => {
+  // Create a new object called "contact" to store the form data
   const contact = {
     fname: req.body.fname,
     lname: req.body.lname,
