@@ -41,7 +41,7 @@ app.post("/submit", (req, res) => {
     connection: req.body.connection,
     other: req.body.other,
     message: req.body.message,
-    timestamp: new DataTransfer().toLocaleString(),
+    timestamp: new Date().toLocaleString(),
   };
 
   // Push contact into the array
